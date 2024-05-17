@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://8ssx614xdxjh"]
+
+[ext_resource type="Script" path="res://UI/mask_selector.gd" id="1_mw78t"]
+
+[node name="MaskSelector" type="Panel"]
+offset_right = 156.0
+offset_bottom = 429.0
+script = ExtResource("1_mw78t")
+metadata/_edit_group_ = true
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+max_columns = 2
+same_column_width = true
+fixed_icon_size = Vector2i(64, 64)
+metadata/_edit_lock_ = true
+
+[connection signal="item_selected" from="ItemList" to="." method="_on_item_list_item_selected"]

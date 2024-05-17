@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhtgr8ljufoth"]
+
+[ext_resource type="Script" path="res://Camera/main_camera.gd" id="1_dr87m"]
+
+[node name="MainCamera" type="Node3D"]
+script = ExtResource("1_dr87m")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="ResetCameraButton" type="Button" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -142.0
+offset_top = -75.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Reset Camera"
+
+[connection signal="pressed" from="ResetCameraButton" to="." method="_on_reset_camera_button_pressed"]
