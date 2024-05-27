@@ -24,5 +24,12 @@ func load_masks():
 	_on_item_list_item_selected(0)
 
 
+func randomize_mask():
+	var mask_index = randi_range(0, $ItemList.item_count - 1)
+	
+	emit_signal("mask_selected", mask_index)
+	$ItemList.select(mask_index)
+
+
 func _on_item_list_item_selected(index):
 	emit_signal("mask_selected", index)

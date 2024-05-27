@@ -69,7 +69,19 @@ layout_mode = 0
 [node name="MaskSelector" parent="UI" instance=ExtResource("10_hqp6u")]
 layout_mode = 1
 
+[node name="RandomizeButton" type="Button" parent="UI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_right = 50.0
+offset_bottom = 46.0
+grow_horizontal = 2
+text = "Randomize"
+
 [connection signal="color_selected" from="UI/ColorSelector" to="." method="_on_color_selector_color_selected"]
 [connection signal="part_selected" from="UI/ColorSelector" to="." method="_on_color_selector_part_selected"]
 [connection signal="mask_scene_loaded" from="UI/MaskSelector" to="." method="_on_mask_selector_mask_scene_loaded"]
 [connection signal="mask_selected" from="UI/MaskSelector" to="." method="_on_mask_selector_mask_selected"]
+[connection signal="pressed" from="UI/RandomizeButton" to="." method="_on_randomize_button_pressed"]

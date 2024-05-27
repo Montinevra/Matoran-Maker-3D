@@ -22,32 +22,31 @@ const MNOG_PURPLE = Color("#5d005d")		#Onu
 const MNOG_WHITE = Color("#fafafa")			#Ko
 const MNOG_LIGHT_GREY = Color("#9e9e9e")	#Ko
 const MNOG_SAND_BLUE = Color("#7aa7d5")		#Ko
-
+const COLORS = [
+	MNOG_GREEN,
+	MNOG_WHITE,
+	MNOG_BLUE,
+	MNOG_RED,
+	MNOG_BLACK,
+	MNOG_BROWN,
+	MNOG_LIME_GREEN,
+	MNOG_LIGHT_GREY,
+	MNOG_LIGHT_BLUE,
+	MNOG_ORANGE,
+	MNOG_DARK_GREY,
+	MNOG_TAN,
+	MNOG_TEAL,
+	MNOG_SAND_BLUE,
+	MNOG_DARK_BLUE,
+	MNOG_YELLOW,
+	MNOG_PURPLE,
+	MNOG_DARK_ORANGE,
+]
 var _selected_part_group: int = 0
 
 
 func _ready():
-	var colors = [
-		MNOG_GREEN,
-		MNOG_WHITE,
-		MNOG_BLUE,
-		MNOG_RED,
-		MNOG_BLACK,
-		MNOG_BROWN,
-		MNOG_LIME_GREEN,
-		MNOG_LIGHT_GREY,
-		MNOG_LIGHT_BLUE,
-		MNOG_ORANGE,
-		MNOG_DARK_GREY,
-		MNOG_TAN,
-		MNOG_TEAL,
-		MNOG_SAND_BLUE,
-		MNOG_DARK_BLUE,
-		MNOG_YELLOW,
-		MNOG_PURPLE,
-		MNOG_DARK_ORANGE,
-	]
-	for color in colors:
+	for color in COLORS:
 		var swatch = Swatch.new()
 		
 		$ColorPicker/Swatches.add_child(swatch)
@@ -69,23 +68,42 @@ func set_color_picker_color(color: Color):
 	$"ColorPicker".color = color
 
 
+func randomize_colors():
+	for part_group in $PartGroupSelector.item_count:
+		var color = COLORS.pick_random()
+		if part_group == _selected_part_group:
+			set_color_picker_color(color)
+			select_all_parts(part_group)
+		_select_color(color, part_group)
+
+
+func select_all_parts(index):
+	var part = $PartGroupSelector.get_child(index)
+	
+	part.visible = index == _selected_part_group
+	if part is ItemList:
+		for j in part.item_count:
+			part.select(j, false)
+
+
 func _on_part_group_selector_item_selected(index):
 	_selected_part_group = index
 	part_selected.emit(_selected_part_group, 0)
 	for i in $PartGroupSelector.get_child_count():
-		var child = $PartGroupSelector.get_child(i)
-		child.visible = index == i
-		if child is ItemList:
-			for j in child.item_count:
-				child.select(j, false)
+		select_all_parts(i)
 
 
 func _on_color_picker_color_changed(color):
-	var child = $PartGroupSelector.get_child(_selected_part_group)
+	_select_color(color, _selected_part_group)
+
+
+func _select_color(color, part_group):
+	var parts = $PartGroupSelector.get_child(part_group)
 	var selected_parts: Array = []
-	if child is ItemList:
-		selected_parts = child.get_selected_items()
-	emit_signal("color_selected", color, _selected_part_group, selected_parts)
+	
+	if parts is ItemList:
+		selected_parts = parts.get_selected_items()
+	emit_signal("color_selected", color, part_group, selected_parts)
 
 
 func _on_part_selector_multi_selected(index, _selected):

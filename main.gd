@@ -16,6 +16,7 @@ func _ready():
 	$UI/ColorSelector.select_part_group(0)
 	$UI/ColorSelector.select_color(_default_color)
 	_masks[0].show()
+	_on_randomize_button_pressed()
 
 
 func _on_color_selector_color_selected(color, group_index, parts_list):
@@ -49,3 +50,7 @@ func _on_mask_selector_mask_selected(index):
 	_current_mask = index
 	_masks[_current_mask].show()
 
+
+func _on_randomize_button_pressed():
+	$UI/ColorSelector.randomize_colors()
+	$UI/MaskSelector.randomize_mask()
