@@ -5,7 +5,7 @@ signal mask_selected(index)
 
 var icon_scene = preload("res://UI/mask_icon_3d.tscn")
 
-func main_ready():
+func load_masks():
 	var path = "res://Parts/Kanohi/"
 	var dir = DirAccess.open(path)
 	

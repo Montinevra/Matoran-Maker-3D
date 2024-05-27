@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dlhxqemr74r5x"]
+[gd_scene load_steps=14 format=3 uid="uid://dlhxqemr74r5x"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_dipbt"]
 [ext_resource type="PackedScene" uid="uid://bhtgr8ljufoth" path="res://Camera/main_camera.tscn" id="2_7svat"]
@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dba00bd1xr5mg" path="res://Parts/32577_tohunga_torso.tscn" id="3_upmsj"]
 [ext_resource type="PackedScene" uid="uid://v303blvmjtlu" path="res://Parts/40507-tohunga_disc_throwing_arm.tscn" id="4_qmcj2"]
 [ext_resource type="PackedScene" uid="uid://msdytpq7ga5f" path="res://Parts/32578_tohunga_claw_arm.tscn" id="5_lc2u8"]
-[ext_resource type="PackedScene" uid="uid://6rdjsh2tw2e" path="res://Parts/32576_tohunga_foot.tscn" id="6_4y7ja"]
+[ext_resource type="PackedScene" uid="uid://6rdjsh2tw2e" path="res://Parts/32576_tohunga_right_foot.tscn" id="6_4y7ja"]
+[ext_resource type="PackedScene" uid="uid://byfp6560wgmgm" path="res://Parts/32576_tohunga_left_foot.tscn" id="8_aw1v2"]
 [ext_resource type="PackedScene" uid="uid://cxbw5kdxvgxlo" path="res://UI/color_selector.tscn" id="9_4y148"]
 [ext_resource type="PackedScene" uid="uid://8ssx614xdxjh" path="res://UI/mask_selector.tscn" id="10_hqp6u"]
 
@@ -46,11 +47,11 @@ transform = Transform3D(7.54979e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, 7.
 [node name="32578-Tohunga Claw Arm" parent="." instance=ExtResource("5_lc2u8")]
 transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 0.399423, -0.0102605, 0)
 
-[node name="32576-Tohunga Foot" parent="." instance=ExtResource("6_4y7ja")]
+[node name="32576-Tohunga Right Foot" parent="." instance=ExtResource("6_4y7ja")]
 transform = Transform3D(18.7939, 6.8404, 2.99003e-07, 0, -8.74228e-07, 20, 6.8404, -18.7939, -8.21505e-07, -0.2, -0.31, 0)
 
-[node name="32576-Tohunga Foot2" parent="." instance=ExtResource("6_4y7ja")]
-transform = Transform3D(18.7939, -6.8404, -2.99003e-07, 0, -8.74228e-07, 20, -6.8404, -18.7939, -8.21505e-07, 0.2, -0.31, 0)
+[node name="32576-Tohunga Left Foot" parent="." instance=ExtResource("8_aw1v2")]
+transform = Transform3D(18.7939, -6.84039, -2.99003e-07, 0, -8.74228e-07, 20, -6.84039, -18.7939, -8.21506e-07, 0.2, -0.31, 0)
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3

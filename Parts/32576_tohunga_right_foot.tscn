@@ -45,7 +45,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_6b17u")
 
-[node name="32576-Tohunga Foot" type="MeshInstance3D"]
+[node name="32576-Tohunga Right Foot" type="MeshInstance3D"]
 transform = Transform3D(20, 0, 0, 0, -2.38419e-06, 20, 0, -20, -2.38419e-06, 0, 0, 0)
 mesh = SubResource("ArrayMesh_j3adg")
 skeleton = NodePath("")
