@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://cb173byqifwcg" path="res://Parts/32579_tohunga_skull.tscn" id="2_a8n1q"]
 [ext_resource type="PackedScene" uid="uid://dba00bd1xr5mg" path="res://Parts/32577_tohunga_torso.tscn" id="3_upmsj"]
 [ext_resource type="PackedScene" uid="uid://v303blvmjtlu" path="res://Parts/40507-tohunga_disc_throwing_arm.tscn" id="4_qmcj2"]
-[ext_resource type="PackedScene" uid="uid://msdytpq7ga5f" path="res://Parts/32578_tohunga_claw_arm.tscn" id="5_lc2u8"]
 [ext_resource type="PackedScene" uid="uid://6rdjsh2tw2e" path="res://Parts/32576_tohunga_right_foot.tscn" id="6_4y7ja"]
+[ext_resource type="PackedScene" uid="uid://bh2wrr4kkcgc5" path="res://Parts/32578-Tohunga Claw Arm.tscn" id="6_r8y0h"]
 [ext_resource type="PackedScene" uid="uid://byfp6560wgmgm" path="res://Parts/32576_tohunga_left_foot.tscn" id="8_aw1v2"]
 [ext_resource type="PackedScene" uid="uid://cxbw5kdxvgxlo" path="res://UI/color_selector.tscn" id="9_4y148"]
 [ext_resource type="PackedScene" uid="uid://8ssx614xdxjh" path="res://UI/mask_selector.tscn" id="10_hqp6u"]
@@ -44,8 +44,8 @@ transform = Transform3D(-4.37115e-08, -1, -3.57627e-07, 1, -4.37114e-08, -1.7881
 [node name="40507-Tohunga Disc Throwing Arm" parent="." instance=ExtResource("4_qmcj2")]
 transform = Transform3D(7.54979e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, 7.54979e-08, -3.30012e-15, -0.399, -0.01, 0)
 
-[node name="32578-Tohunga Claw Arm" parent="." instance=ExtResource("5_lc2u8")]
-transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 0.399423, -0.0102605, 0)
+[node name="32578-Tohunga Claw Arm" parent="." instance=ExtResource("6_r8y0h")]
+transform = Transform3D(1.78814e-09, 0, -0.01, 0, 0.01, 0, 0.01, 0, 1.78814e-09, 0.399423, -0.0102605, 0)
 
 [node name="32576-Tohunga Right Foot" parent="." instance=ExtResource("6_4y7ja")]
 transform = Transform3D(18.7939, 6.8404, 2.99003e-07, 0, -8.74228e-07, 20, 6.8404, -18.7939, -8.21505e-07, -0.2, -0.31, 0)
