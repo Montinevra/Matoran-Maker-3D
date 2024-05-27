@@ -3,10 +3,11 @@
 [ext_resource type="Script" path="res://UI/color_selector.gd" id="1_tcuiq"]
 
 [node name="ColorSelector" type="Panel"]
-offset_right = 242.0
-offset_bottom = 279.0
+offset_right = 232.0
+offset_bottom = 380.0
 size_flags_horizontal = 0
 script = ExtResource("1_tcuiq")
+metadata/_edit_lock_ = true
 
 [node name="ColorPicker" type="ColorPicker" parent="."]
 layout_mode = 1
@@ -19,6 +20,11 @@ picker_shape = 4
 sampler_visible = false
 color_modes_visible = false
 presets_visible = false
+
+[node name="Swatches" type="GridContainer" parent="ColorPicker"]
+layout_mode = 2
+columns = 6
+metadata/_edit_group_ = true
 
 [node name="PartGroupSelector" type="ItemList" parent="."]
 clip_contents = false
@@ -34,6 +40,8 @@ item_count = 3
 item_0/text = "Mask"
 item_1/text = "Body"
 item_2/text = "Feet"
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="PartSelectorMask" type="Control" parent="PartGroupSelector"]
 visible = false
@@ -70,7 +78,6 @@ item_0/text = "Right Foot"
 item_1/text = "Left Foot"
 
 [connection signal="color_changed" from="ColorPicker" to="." method="_on_color_picker_color_changed"]
-[connection signal="item_selected" from="PartGroupSelector" to="." method="_on_part_selector_item_selected"]
 [connection signal="item_selected" from="PartGroupSelector" to="." method="_on_part_group_selector_item_selected"]
 [connection signal="multi_selected" from="PartGroupSelector/PartSelectorBody" to="." method="_on_part_selector_multi_selected"]
 [connection signal="multi_selected" from="PartGroupSelector/PartSelectorFeet" to="." method="_on_part_selector_multi_selected"]
