@@ -15,9 +15,22 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -142.0
-offset_top = -75.0
+offset_top = -50.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "Reset Camera"
+
+[node name="Label" type="Label" parent="ResetCameraButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.02
+anchor_right = 1.0
+anchor_bottom = -0.02
+offset_top = -75.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Left click: Rotate
+Right click: Pan
+Scroll: Zoom"
 
 [connection signal="pressed" from="ResetCameraButton" to="." method="_on_reset_camera_button_pressed"]
