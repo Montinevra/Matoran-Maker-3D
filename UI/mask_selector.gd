@@ -6,12 +6,24 @@ signal mask_selected(index)
 var icon_scene = preload("res://UI/mask_icon_3d.tscn")
 
 func load_masks():
-	var path = "res://Parts/Kanohi/"
-	var dir = DirAccess.open(path)
+	const files = [
+		"res://Parts/Kanohi/32565_miru.tscn",
+		"res://Parts/Kanohi/32575_mahiki.tscn",
+		"res://Parts/Kanohi/32569_akaku.tscn",
+		"res://Parts/Kanohi/32575_matatu.tscn",
+		"res://Parts/Kanohi/32571_kaukau.tscn",
+		"res://Parts/Kanohi/32574_rau.tscn",
+		"res://Parts/Kanohi/32505_hau.tscn",
+		"res://Parts/Kanohi/32573_huna.tscn",
+		"res://Parts/Kanohi/32566_pakari.tscn",
+		"res://Parts/Kanohi/32567_ruru.tscn",
+		"res://Parts/Kanohi/32568_kakama.tscn",
+		"res://Parts/Kanohi/32572_komau.tscn",
+	]
 	
-	for file in dir.get_files():
+	for file in files:
 		var icon = icon_scene.instantiate()
-		var mask_scene = load(path + file)
+		var mask_scene = load(file)
 		var mask = mask_scene.instantiate()
 		var icon_texture = ViewportTexture.new()
 		
